@@ -1,0 +1,25 @@
+{
+  "libraryApp": {
+    "aluno": {
+      "home": {
+        "title": "Alunos",
+        "createLabel": "Creeare o nouă entitate Aluno",
+        "createOrEditLabel": "Creeare sau editare Aluno",
+        "notFound": "No Alunos found"
+      },
+      "created": "A fost creată o nouă entitate Aluno cu identificatorul {{ param }}",
+      "updated": "Aluno cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Aluno cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Aluno {{ id }}?"
+      },
+      "detail": {
+        "title": "Aluno"
+      },
+      "nome": "Nome",
+      "turma": "Turma",
+      "matricula": "Matricula",
+      "celular": "Celular"
+    }
+  }
+}

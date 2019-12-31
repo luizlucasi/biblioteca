@@ -1,0 +1,27 @@
+{
+  "libraryApp": {
+    "livro": {
+      "home": {
+        "title": "Livros",
+        "createLabel": "Creeare o nouă entitate Livro",
+        "createOrEditLabel": "Creeare sau editare Livro",
+        "notFound": "No Livros found"
+      },
+      "created": "A fost creată o nouă entitate Livro cu identificatorul {{ param }}",
+      "updated": "Livro cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Livro cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Livro {{ id }}?"
+      },
+      "detail": {
+        "title": "Livro"
+      },
+      "isbn": "Isbn",
+      "nome": "Nome",
+      "editora": "Editora",
+      "capa": "Capa",
+      "tombo": "Tombo",
+      "autor": "Autor"
+    }
+  }
+}

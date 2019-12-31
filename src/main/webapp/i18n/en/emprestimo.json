@@ -1,0 +1,24 @@
+{
+  "libraryApp": {
+    "emprestimo": {
+      "home": {
+        "title": "Emprestimos",
+        "createLabel": "Create a new Emprestimo",
+        "createOrEditLabel": "Create or edit a Emprestimo",
+        "notFound": "No Emprestimos found"
+      },
+      "created": "A new Emprestimo is created with identifier {{ param }}",
+      "updated": "A Emprestimo is updated with identifier {{ param }}",
+      "deleted": "A Emprestimo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Emprestimo {{ id }}?"
+      },
+      "detail": {
+        "title": "Emprestimo"
+      },
+      "dataEmprestimo": "Data Emprestimo",
+      "livro": "Livro",
+      "aluno": "Aluno"
+    }
+  }
+}

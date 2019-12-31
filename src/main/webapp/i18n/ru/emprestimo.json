@@ -1,0 +1,24 @@
+{
+  "libraryApp": {
+    "emprestimo": {
+      "home": {
+        "title": "Emprestimos",
+        "createLabel": "Создать новый Emprestimo",
+        "createOrEditLabel": "Создать или отредактировать Emprestimo",
+        "notFound": "No Emprestimos found"
+      },
+      "created": "Новый Emprestimo создан с идентификатором {{ param }}",
+      "updated": "Emprestimo обновлен с идентификатором {{ param }}",
+      "deleted": "Emprestimo удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Emprestimo {{ id }}?"
+      },
+      "detail": {
+        "title": "Emprestimo"
+      },
+      "dataEmprestimo": "Data Emprestimo",
+      "livro": "Livro",
+      "aluno": "Aluno"
+    }
+  }
+}

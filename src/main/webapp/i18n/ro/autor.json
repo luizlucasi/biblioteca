@@ -1,0 +1,24 @@
+{
+  "libraryApp": {
+    "autor": {
+      "home": {
+        "title": "Autors",
+        "createLabel": "Creeare o nouă entitate Autor",
+        "createOrEditLabel": "Creeare sau editare Autor",
+        "notFound": "No Autors found"
+      },
+      "created": "A fost creată o nouă entitate Autor cu identificatorul {{ param }}",
+      "updated": "Autor cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Autor cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Autor {{ id }}?"
+      },
+      "detail": {
+        "title": "Autor"
+      },
+      "nome": "Nome",
+      "sobrenome": "Sobrenome",
+      "livro": "Livro"
+    }
+  }
+}

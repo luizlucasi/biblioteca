@@ -1,0 +1,39 @@
+{
+    "name": "Emprestimo",
+    "fields": [
+        {
+            "fieldName": "dataEmprestimo",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "livro",
+            "otherEntityRelationshipName": "emprestimo",
+            "relationshipName": "livro",
+            "otherEntityField": "tombo",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "aluno",
+            "otherEntityRelationshipName": "emprestimo",
+            "relationshipName": "aluno",
+            "otherEntityField": "matricula",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191231195935",
+    "entityTableName": "emprestimo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": [
+        "library"
+    ]
+}

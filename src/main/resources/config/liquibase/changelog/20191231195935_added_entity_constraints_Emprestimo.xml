@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Emprestimo.
+    -->
+    <changeSet id="20191231195935-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="livro_id"
+                                 baseTableName="emprestimo"
+                                 constraintName="fk_emprestimo_livro_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="livro"/>
+
+        <addForeignKeyConstraint baseColumnNames="aluno_id"
+                                 baseTableName="emprestimo"
+                                 constraintName="fk_emprestimo_aluno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+
+    </changeSet>
+</databaseChangeLog>

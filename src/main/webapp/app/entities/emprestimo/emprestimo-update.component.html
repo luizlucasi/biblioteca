@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-emprestimo-heading" jhiTranslate="libraryApp.emprestimo.home.createOrEditLabel">Create or edit a Emprestimo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.emprestimo.dataEmprestimo" for="field_dataEmprestimo">Data Emprestimo</label>
+                    <div class="input-group">
+                        <input id="field_dataEmprestimo" type="text" class="form-control" name="dataEmprestimo" ngbDatepicker  #dataEmprestimoDp="ngbDatepicker" formControlName="dataEmprestimo"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataEmprestimoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.emprestimo.livro" for="field_livro">Livro</label>
+                    <select class="form-control" id="field_livro" name="livro" formControlName="livro">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="livroOption.id === editForm.get('livro')!.value?.id ? editForm.get('livro')!.value : livroOption" *ngFor="let livroOption of livros; trackBy: trackById">{{livroOption.tombo}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.emprestimo.aluno" for="field_aluno">Aluno</label>
+                    <select class="form-control" id="field_aluno" name="aluno" formControlName="aluno">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="alunoOption.id === editForm.get('aluno')!.value?.id ? editForm.get('aluno')!.value : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackById">{{alunoOption.matricula}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

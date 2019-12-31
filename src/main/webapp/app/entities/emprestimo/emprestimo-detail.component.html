@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="emprestimo">
+            <h2><span jhiTranslate="libraryApp.emprestimo.detail.title">Emprestimo</span> {{emprestimo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="libraryApp.emprestimo.dataEmprestimo">Data Emprestimo</span></dt>
+                <dd>
+                    <span>{{emprestimo.dataEmprestimo}}</span>
+                </dd>
+                <dt><span jhiTranslate="libraryApp.emprestimo.livro">Livro</span></dt>
+                <dd>
+                    <div *ngIf="emprestimo.livro">
+                        <a [routerLink]="['/livro', emprestimo.livro?.id, 'view']">{{emprestimo.livro?.tombo}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="libraryApp.emprestimo.aluno">Aluno</span></dt>
+                <dd>
+                    <div *ngIf="emprestimo.aluno">
+                        <a [routerLink]="['/aluno', emprestimo.aluno?.id, 'view']">{{emprestimo.aluno?.matricula}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/emprestimo', emprestimo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

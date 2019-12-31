@@ -15,10 +15,10 @@
 
 spring:
   application:
-    name: biblioteca
+    name: library
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:biblioteca;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:library;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -55,13 +55,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: biblioteca-task-
+      thread-name-prefix: library-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: biblioteca-scheduling-
+      thread-name-prefix: library-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -79,7 +79,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'bibliotecaApp'
+    name: 'libraryApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -92,9 +92,12 @@ jhipster:
     from: test@localhost
     base-url: http://127.0.0.1:8080
   security:
-    remember-me:
-      # security key (this key should be unique for your application, and kept secret)
-      key: acd00c02be22421006b3717fdb49c03ce59b527bae8383f3853ffec107adbf0535161766594c993fcd4daf4fd0e101a917b1
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
+        base64-secret: ZDFhNGJhZDhlODY4MzczOTExMGRhMGE1YzE5ZjkxMTdlMzQyMmMyNjc2MDE3YjgwOTkxMWE1NzUxNmQxNjk0YTQ2YzM0ZmQ1MjIxZjlhZDUyZjAxMzk0MjliZjZjZmVlYzkwYzFjNmVlY2RlZDdlZDU2YjM1ZjYwNDY1NzcxZjI=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
   metrics:
     logs: # Reports metrics in the logs
       enabled: true
