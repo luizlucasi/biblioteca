@@ -1,0 +1,25 @@
+{
+  "libraryApp": {
+    "aluno": {
+      "home": {
+        "title": "Alunos",
+        "createLabel": "Создать новый Aluno",
+        "createOrEditLabel": "Создать или отредактировать Aluno",
+        "notFound": "No Alunos found"
+      },
+      "created": "Новый Aluno создан с идентификатором {{ param }}",
+      "updated": "Aluno обновлен с идентификатором {{ param }}",
+      "deleted": "Aluno удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Aluno {{ id }}?"
+      },
+      "detail": {
+        "title": "Aluno"
+      },
+      "nome": "Nome",
+      "turma": "Turma",
+      "matricula": "Matricula",
+      "celular": "Celular"
+    }
+  }
+}

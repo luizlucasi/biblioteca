@@ -1,0 +1,24 @@
+{
+  "libraryApp": {
+    "emprestimo": {
+      "home": {
+        "title": "Emprestimos",
+        "createLabel": "Creeare o nouă entitate Emprestimo",
+        "createOrEditLabel": "Creeare sau editare Emprestimo",
+        "notFound": "No Emprestimos found"
+      },
+      "created": "A fost creată o nouă entitate Emprestimo cu identificatorul {{ param }}",
+      "updated": "Emprestimo cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Emprestimo cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Emprestimo {{ id }}?"
+      },
+      "detail": {
+        "title": "Emprestimo"
+      },
+      "dataEmprestimo": "Data Emprestimo",
+      "livro": "Livro",
+      "aluno": "Aluno"
+    }
+  }
+}

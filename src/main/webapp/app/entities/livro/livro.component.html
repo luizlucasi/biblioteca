@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="libraryApp.livro.home.title">Livros</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-livro" [routerLink]="['/livro/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="libraryApp.livro.home.createLabel">
+            Create a new Livro
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="livros?.length === 0">
+        <span jhiTranslate="libraryApp.livro.home.notFound">No livros found</span>
+    </div>
+    <div class="table-responsive" *ngIf="livros?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isbn"><span jhiTranslate="libraryApp.livro.isbn">Isbn</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nome"><span jhiTranslate="libraryApp.livro.nome">Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="editora"><span jhiTranslate="libraryApp.livro.editora">Editora</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="capa"><span jhiTranslate="libraryApp.livro.capa">Capa</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tombo"><span jhiTranslate="libraryApp.livro.tombo">Tombo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let livro of livros ;trackBy: trackId">
+                <td><a [routerLink]="['/livro', livro.id, 'view' ]">{{livro.id}}</a></td>
+                <td>{{livro.isbn}}</td>
+                <td>{{livro.nome}}</td>
+                <td>{{livro.editora}}</td>
+                <td>
+                    <a *ngIf="livro.capa" (click)="openFile(livro.capaContentType, livro.capa)">
+                        <img [src]="'data:' + livro.capaContentType + ';base64,' + livro.capa" style="max-height: 30px;" alt="livro image"/>
+                    </a>
+                    <span *ngIf="livro.capa">{{livro.capaContentType}}, {{byteSize(livro.capa)}}</span>
+                </td>
+                <td>{{livro.tombo}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/livro', livro.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/livro', livro.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(livro)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="livros?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

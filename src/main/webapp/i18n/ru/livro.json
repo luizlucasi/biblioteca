@@ -1,0 +1,27 @@
+{
+  "libraryApp": {
+    "livro": {
+      "home": {
+        "title": "Livros",
+        "createLabel": "Создать новый Livro",
+        "createOrEditLabel": "Создать или отредактировать Livro",
+        "notFound": "No Livros found"
+      },
+      "created": "Новый Livro создан с идентификатором {{ param }}",
+      "updated": "Livro обновлен с идентификатором {{ param }}",
+      "deleted": "Livro удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Livro {{ id }}?"
+      },
+      "detail": {
+        "title": "Livro"
+      },
+      "isbn": "Isbn",
+      "nome": "Nome",
+      "editora": "Editora",
+      "capa": "Capa",
+      "tombo": "Tombo",
+      "autor": "Autor"
+    }
+  }
+}

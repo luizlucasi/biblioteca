@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-livro-heading" jhiTranslate="libraryApp.livro.home.createOrEditLabel">Create or edit a Livro</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.livro.isbn" for="field_isbn">Isbn</label>
+                    <input type="text" class="form-control" name="isbn" id="field_isbn"
+                           formControlName="isbn"/>
+                    <div *ngIf="editForm.get('isbn')!.invalid && (editForm.get('isbn')!.dirty || editForm.get('isbn')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isbn')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isbn')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isbn')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 13 }">
+                        This field cannot be longer than 13 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.livro.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                    <div *ngIf="editForm.get('nome')!.invalid && (editForm.get('nome')!.dirty || editForm.get('nome')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nome')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nome')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.livro.editora" for="field_editora">Editora</label>
+                    <input type="text" class="form-control" name="editora" id="field_editora"
+                           formControlName="editora"/>
+                    <div *ngIf="editForm.get('editora')!.invalid && (editForm.get('editora')!.dirty || editForm.get('editora')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('editora')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('editora')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 4 }">
+                        This field is required to be at least 4 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('editora')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.livro.capa" for="field_capa">Capa</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('capaContentType')!.value + ';base64,' + editForm.get('capa')!.value" style="max-height: 100px;" *ngIf="editForm.get('capa')!.value" alt="livro image"/>
+                        <div *ngIf="editForm.get('capa')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{editForm.get('capaContentType')!.value}}, {{byteSize(editForm.get('capa')!.value)}}</span>
+                            <button type="button" (click)="clearInputImage('capa', 'capaContentType', 'file_capa')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_capa" (change)="setFileData($event, 'capa', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="capa" id="field_capa"
+                           formControlName="capa"/>
+                    <input type="hidden" class="form-control" name="capaContentType" id="field_capaContentType"
+                           formControlName="capaContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.livro.tombo" for="field_tombo">Tombo</label>
+                    <input type="number" class="form-control" name="tombo" id="field_tombo"
+                           formControlName="tombo"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="libraryApp.livro.autor" for="field_autors">Autor</label>
+                    <select class="form-control" id="field_autors" multiple name="autors" formControlName="autors">
+                        <option [ngValue]="getSelected(editForm.get('autors')!.value, autorOption)" *ngFor="let autorOption of autors; trackBy: trackById">{{autorOption.nome}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

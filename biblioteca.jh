@@ -1,0 +1,62 @@
+
+application {
+  config {
+    baseName library,
+    applicationType monolith,
+    authenticationType jwt
+    packageName com.sgaraba.library,
+    prodDatabaseType postgresql,
+    cacheProvider hazelcast,
+    buildTool maven,
+    clientFramework angular,
+    useSass true,
+    testFrameworks [protractor],
+	nativeLanguage en,
+    languages [en, ro, ru]
+  }
+  entities *
+}
+
+DEFAULT_MIN_LENGTH = 4
+DEFAULT_MAX_LENGTH = 100
+
+
+
+entity Autor {
+  nome String required maxlength(DEFAULT_MAX_LENGTH)
+  sobrenome String required maxlength(DEFAULT_MAX_LENGTH)
+}
+
+entity Aluno {
+  nome String required maxlength(DEFAULT_MAX_LENGTH)
+  turma Integer 
+  matricula Integer
+  celular String maxlength(20)
+}
+
+entity Livro{
+  isbn String required unique minlength(5) maxlength(13)
+  nome String required maxlength(100)
+  editora String required minlength(DEFAULT_MIN_LENGTH) maxlength(DEFAULT_MAX_LENGTH)
+  capa ImageBlob
+  tombo Integer
+}
+
+entity Emprestimo{
+  dataEmprestimo LocalDate
+}
+
+relationship OneToOne {
+  Emprestimo{livro(tombo)} to Livro
+  Emprestimo{Aluno(matricula)} to Aluno
+}
+
+relationship ManyToMany {
+  Livro{autor(nome)} to Autor{livro}
+}
+
+filter Livro, Aluno, Autor, Emprestimo
+
+paginate Livro, Aluno, Autor, Emprestimo with pagination
+
+service all with serviceImpl
