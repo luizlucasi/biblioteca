@@ -1,0 +1,45 @@
+
+entity NotaFiscal {
+  numero String
+  competencia String
+  tipo String
+  servico String
+  condicaoPagamento String
+  totalNF Double
+	
+}
+
+
+entity Cliente {
+ codCliente String
+  
+}
+
+entity Contrato {
+  codigoClienteSap String
+  numeroContratoSap String
+  numeroContratoTpz String
+  nome String
+  status String
+  dataAssinatura LocalDate
+  dataReajuste LocalDate
+  dataTermino LocalDate
+  estado String
+  cnpj String
+  inscricaoEstadual String
+  vigencia Integer
+  
+}
+
+entity Circuito {
+	idControleDesignacao String
+    idEstacao String
+}
+
+relationship ManyToOne {
+  Contrato{notaFiscal} to NotaFiscal
+  Contrato{circuito} to Circuito
+  Cliente{contrato} to Contrato
+}
+
+	
