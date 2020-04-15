@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="circuito">
+            <h2><span jhiTranslate="libraryApp.circuito.detail.title">Circuito</span> {{ circuito.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="libraryApp.circuito.idControleDesignacao">Id Controle Designacao</span></dt>
+                <dd>
+                    <span>{{ circuito.idControleDesignacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="libraryApp.circuito.idEstacao">Id Estacao</span></dt>
+                <dd>
+                    <span>{{ circuito.idEstacao }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/circuito', circuito.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

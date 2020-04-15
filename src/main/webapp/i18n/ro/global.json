@@ -14,6 +14,10 @@
         "aluno": "Aluno",
         "livro": "Livro",
         "emprestimo": "Emprestimo",
+        "notaFiscal": "Nota Fiscal",
+        "cliente": "Cliente",
+        "contrato": "Contrato",
+        "circuito": "Circuito",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

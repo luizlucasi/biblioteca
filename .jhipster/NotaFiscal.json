@@ -1,0 +1,41 @@
+{
+    "name": "NotaFiscal",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "competencia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "servico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "condicaoPagamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalNF",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200415202700",
+    "entityTableName": "nota_fiscal",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,126 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-contrato-heading" jhiTranslate="libraryApp.contrato.home.createOrEditLabel">Create or edit a Contrato</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.codigoClienteSap" for="field_codigoClienteSap">Codigo Cliente Sap</label>
+                    <input type="text" class="form-control" name="codigoClienteSap" id="field_codigoClienteSap"
+                           formControlName="codigoClienteSap"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.numeroContratoSap" for="field_numeroContratoSap">Numero Contrato Sap</label>
+                    <input type="text" class="form-control" name="numeroContratoSap" id="field_numeroContratoSap"
+                           formControlName="numeroContratoSap"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.numeroContratoTpz" for="field_numeroContratoTpz">Numero Contrato Tpz</label>
+                    <input type="text" class="form-control" name="numeroContratoTpz" id="field_numeroContratoTpz"
+                           formControlName="numeroContratoTpz"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.dataAssinatura" for="field_dataAssinatura">Data Assinatura</label>
+                    <div class="input-group">
+                        <input id="field_dataAssinatura" type="text" class="form-control" name="dataAssinatura" ngbDatepicker #dataAssinaturaDp="ngbDatepicker" formControlName="dataAssinatura"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataAssinaturaDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.dataReajuste" for="field_dataReajuste">Data Reajuste</label>
+                    <div class="input-group">
+                        <input id="field_dataReajuste" type="text" class="form-control" name="dataReajuste" ngbDatepicker #dataReajusteDp="ngbDatepicker" formControlName="dataReajuste"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataReajusteDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.dataTermino" for="field_dataTermino">Data Termino</label>
+                    <div class="input-group">
+                        <input id="field_dataTermino" type="text" class="form-control" name="dataTermino" ngbDatepicker #dataTerminoDp="ngbDatepicker" formControlName="dataTermino"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataTerminoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.estado" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                           formControlName="estado"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.cnpj" for="field_cnpj">Cnpj</label>
+                    <input type="text" class="form-control" name="cnpj" id="field_cnpj"
+                           formControlName="cnpj"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.inscricaoEstadual" for="field_inscricaoEstadual">Inscricao Estadual</label>
+                    <input type="text" class="form-control" name="inscricaoEstadual" id="field_inscricaoEstadual"
+                           formControlName="inscricaoEstadual"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.vigencia" for="field_vigencia">Vigencia</label>
+                    <input type="number" class="form-control" name="vigencia" id="field_vigencia"
+                           formControlName="vigencia"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.notaFiscal" for="field_notaFiscal">Nota Fiscal</label>
+                    <select class="form-control" id="field_notaFiscal" name="notaFiscal" formControlName="notaFiscal">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="notaFiscalOption.id === editForm.get('notaFiscal')!.value?.id ? editForm.get('notaFiscal')!.value : notaFiscalOption" *ngFor="let notaFiscalOption of notafiscals; trackBy: trackById">{{ notaFiscalOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="libraryApp.contrato.circuito" for="field_circuito">Circuito</label>
+                    <select class="form-control" id="field_circuito" name="circuito" formControlName="circuito">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="circuitoOption.id === editForm.get('circuito')!.value?.id ? editForm.get('circuito')!.value : circuitoOption" *ngFor="let circuitoOption of circuitos; trackBy: trackById">{{ circuitoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

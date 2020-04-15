@@ -1,0 +1,29 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "codCliente",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contrato",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipName": "contrato",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200415202800",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,23 @@
+{
+  "libraryApp": {
+    "circuito": {
+      "home": {
+        "title": "Circuitos",
+        "createLabel": "Создать новый Circuito",
+        "createOrEditLabel": "Создать или отредактировать Circuito",
+        "notFound": "No Circuitos found"
+      },
+      "created": "Новый Circuito создан с идентификатором {{ param }}",
+      "updated": "Circuito обновлен с идентификатором {{ param }}",
+      "deleted": "Circuito удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Circuito {{ id }}?"
+      },
+      "detail": {
+        "title": "Circuito"
+      },
+      "idControleDesignacao": "Id Controle Designacao",
+      "idEstacao": "Id Estacao"
+    }
+  }
+}

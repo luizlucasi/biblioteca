@@ -1,0 +1,80 @@
+{
+    "name": "Contrato",
+    "fields": [
+        {
+            "fieldName": "codigoClienteSap",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroContratoSap",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroContratoTpz",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataAssinatura",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataReajuste",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataTermino",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnpj",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inscricaoEstadual",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vigencia",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "notaFiscal",
+            "otherEntityRelationshipName": "contrato",
+            "relationshipName": "notaFiscal",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "circuito",
+            "otherEntityRelationshipName": "contrato",
+            "relationshipName": "circuito",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200415202900",
+    "entityTableName": "contrato",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

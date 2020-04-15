@@ -1,0 +1,27 @@
+{
+  "libraryApp": {
+    "notaFiscal": {
+      "home": {
+        "title": "Nota Fiscals",
+        "createLabel": "Creeare o nouă entitate Nota Fiscal",
+        "createOrEditLabel": "Creeare sau editare Nota Fiscal",
+        "notFound": "No Nota Fiscals found"
+      },
+      "created": "A fost creată o nouă entitate Nota Fiscal cu identificatorul {{ param }}",
+      "updated": "Nota Fiscal cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Nota Fiscal cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Nota Fiscal {{ id }}?"
+      },
+      "detail": {
+        "title": "Nota Fiscal"
+      },
+      "numero": "Numero",
+      "competencia": "Competencia",
+      "tipo": "Tipo",
+      "servico": "Servico",
+      "condicaoPagamento": "Condicao Pagamento",
+      "totalNF": "Total NF"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Circuito",
+    "fields": [
+        {
+            "fieldName": "idControleDesignacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idEstacao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200415203000",
+    "entityTableName": "circuito",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

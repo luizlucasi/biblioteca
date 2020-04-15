@@ -1,0 +1,27 @@
+{
+  "libraryApp": {
+    "notaFiscal": {
+      "home": {
+        "title": "Nota Fiscals",
+        "createLabel": "Create a new Nota Fiscal",
+        "createOrEditLabel": "Create or edit a Nota Fiscal",
+        "notFound": "No Nota Fiscals found"
+      },
+      "created": "A new Nota Fiscal is created with identifier {{ param }}",
+      "updated": "A Nota Fiscal is updated with identifier {{ param }}",
+      "deleted": "A Nota Fiscal is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nota Fiscal {{ id }}?"
+      },
+      "detail": {
+        "title": "Nota Fiscal"
+      },
+      "numero": "Numero",
+      "competencia": "Competencia",
+      "tipo": "Tipo",
+      "servico": "Servico",
+      "condicaoPagamento": "Condicao Pagamento",
+      "totalNF": "Total NF"
+    }
+  }
+}

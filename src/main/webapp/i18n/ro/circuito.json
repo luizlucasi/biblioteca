@@ -1,0 +1,23 @@
+{
+  "libraryApp": {
+    "circuito": {
+      "home": {
+        "title": "Circuitos",
+        "createLabel": "Creeare o nouă entitate Circuito",
+        "createOrEditLabel": "Creeare sau editare Circuito",
+        "notFound": "No Circuitos found"
+      },
+      "created": "A fost creată o nouă entitate Circuito cu identificatorul {{ param }}",
+      "updated": "Circuito cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Circuito cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Circuito {{ id }}?"
+      },
+      "detail": {
+        "title": "Circuito"
+      },
+      "idControleDesignacao": "Id Controle Designacao",
+      "idEstacao": "Id Estacao"
+    }
+  }
+}

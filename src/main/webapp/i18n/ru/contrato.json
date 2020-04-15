@@ -1,0 +1,35 @@
+{
+  "libraryApp": {
+    "contrato": {
+      "home": {
+        "title": "Contratoes",
+        "createLabel": "Создать новый Contrato",
+        "createOrEditLabel": "Создать или отредактировать Contrato",
+        "notFound": "No Contratoes found"
+      },
+      "created": "Новый Contrato создан с идентификатором {{ param }}",
+      "updated": "Contrato обновлен с идентификатором {{ param }}",
+      "deleted": "Contrato удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Contrato {{ id }}?"
+      },
+      "detail": {
+        "title": "Contrato"
+      },
+      "codigoClienteSap": "Codigo Cliente Sap",
+      "numeroContratoSap": "Numero Contrato Sap",
+      "numeroContratoTpz": "Numero Contrato Tpz",
+      "nome": "Nome",
+      "status": "Status",
+      "dataAssinatura": "Data Assinatura",
+      "dataReajuste": "Data Reajuste",
+      "dataTermino": "Data Termino",
+      "estado": "Estado",
+      "cnpj": "Cnpj",
+      "inscricaoEstadual": "Inscricao Estadual",
+      "vigencia": "Vigencia",
+      "notaFiscal": "Nota Fiscal",
+      "circuito": "Circuito"
+    }
+  }
+}

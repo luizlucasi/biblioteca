@@ -1,0 +1,35 @@
+{
+  "libraryApp": {
+    "contrato": {
+      "home": {
+        "title": "Contratoes",
+        "createLabel": "Creeare o nouă entitate Contrato",
+        "createOrEditLabel": "Creeare sau editare Contrato",
+        "notFound": "No Contratoes found"
+      },
+      "created": "A fost creată o nouă entitate Contrato cu identificatorul {{ param }}",
+      "updated": "Contrato cu identificatorul {{ param }} a fost actualizată",
+      "deleted": "Contrato cu identificatorul {{ param }} a fost ștearsă",
+      "delete": {
+        "question": "Sunteți sigur că doriți să ștergeți Contrato {{ id }}?"
+      },
+      "detail": {
+        "title": "Contrato"
+      },
+      "codigoClienteSap": "Codigo Cliente Sap",
+      "numeroContratoSap": "Numero Contrato Sap",
+      "numeroContratoTpz": "Numero Contrato Tpz",
+      "nome": "Nome",
+      "status": "Status",
+      "dataAssinatura": "Data Assinatura",
+      "dataReajuste": "Data Reajuste",
+      "dataTermino": "Data Termino",
+      "estado": "Estado",
+      "cnpj": "Cnpj",
+      "inscricaoEstadual": "Inscricao Estadual",
+      "vigencia": "Vigencia",
+      "notaFiscal": "Nota Fiscal",
+      "circuito": "Circuito"
+    }
+  }
+}

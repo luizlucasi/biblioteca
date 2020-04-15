@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="libraryApp.notaFiscal.home.title">Nota Fiscals</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-nota-fiscal" [routerLink]="['/nota-fiscal/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="libraryApp.notaFiscal.home.createLabel">
+            Create a new Nota Fiscal
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="notaFiscals?.length === 0">
+        <span jhiTranslate="libraryApp.notaFiscal.home.notFound">No notaFiscals found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="notaFiscals?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.notaFiscal.numero">Numero</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.notaFiscal.competencia">Competencia</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.notaFiscal.tipo">Tipo</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.notaFiscal.servico">Servico</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.notaFiscal.condicaoPagamento">Condicao Pagamento</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.notaFiscal.totalNF">Total NF</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let notaFiscal of notaFiscals ;trackBy: trackId">
+                    <td><a [routerLink]="['/nota-fiscal', notaFiscal.id, 'view']">{{ notaFiscal.id }}</a></td>
+                    <td>{{ notaFiscal.numero }}</td>
+                    <td>{{ notaFiscal.competencia }}</td>
+                    <td>{{ notaFiscal.tipo }}</td>
+                    <td>{{ notaFiscal.servico }}</td>
+                    <td>{{ notaFiscal.condicaoPagamento }}</td>
+                    <td>{{ notaFiscal.totalNF }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/nota-fiscal', notaFiscal.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/nota-fiscal', notaFiscal.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(notaFiscal)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -19,6 +19,22 @@ import { RouterModule } from '@angular/router';
       {
         path: 'emprestimo',
         loadChildren: () => import('./emprestimo/emprestimo.module').then(m => m.LibraryEmprestimoModule)
+      },
+      {
+        path: 'nota-fiscal',
+        loadChildren: () => import('./nota-fiscal/nota-fiscal.module').then(m => m.LibraryNotaFiscalModule)
+      },
+      {
+        path: 'cliente',
+        loadChildren: () => import('./cliente/cliente.module').then(m => m.LibraryClienteModule)
+      },
+      {
+        path: 'contrato',
+        loadChildren: () => import('./contrato/contrato.module').then(m => m.LibraryContratoModule)
+      },
+      {
+        path: 'circuito',
+        loadChildren: () => import('./circuito/circuito.module').then(m => m.LibraryCircuitoModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

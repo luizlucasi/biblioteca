@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="libraryApp.circuito.home.title">Circuitos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-circuito" [routerLink]="['/circuito/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="libraryApp.circuito.home.createLabel">
+            Create a new Circuito
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="circuitos?.length === 0">
+        <span jhiTranslate="libraryApp.circuito.home.notFound">No circuitos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="circuitos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.circuito.idControleDesignacao">Id Controle Designacao</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.circuito.idEstacao">Id Estacao</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let circuito of circuitos ;trackBy: trackId">
+                    <td><a [routerLink]="['/circuito', circuito.id, 'view']">{{ circuito.id }}</a></td>
+                    <td>{{ circuito.idControleDesignacao }}</td>
+                    <td>{{ circuito.idEstacao }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/circuito', circuito.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/circuito', circuito.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(circuito)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
