@@ -1,0 +1,158 @@
+
+enum TipoArquivo {
+  MANUAL, 
+  RELATORIO, 
+  NOTA,
+  VIDEO_AULA
+}
+
+
+enum Perfil {
+  COMERCIAL, 
+  SEMPERFIL
+}
+
+entity FaqCategoria {
+    createdAt LocalDate 
+    updatedAt LocalDate
+    
+}
+
+entity Faq {
+    createdAt LocalDate 
+    updatedAt LocalDate
+    
+}
+
+
+entity FaqResposta {
+    createdAt LocalDate 
+    updatedAt LocalDate
+    
+}
+
+
+
+entity Usuario {
+    createdAt LocalDate 
+    updatedAt LocalDate
+    
+}
+
+
+entity Noticia {
+    createdAt LocalDate 
+    updatedAt LocalDate
+    titulo String
+    texto String
+    
+    
+}
+
+
+
+enum Perfil {
+  COMERCIAL, 
+  SEMPERFIL
+}
+
+entity Cliente {
+	createdAt LocalDate
+    updatedAt LocalDate
+    cnpj String 
+    codClienteSap String
+    endereco String
+    estado String
+    municipio String 
+    nome String 
+    pais String
+    idClientePai Integer
+}
+
+
+entity NotaFiscal {
+  numero String
+  competencia String
+  tipo String
+  servico String
+  condicaoPagamento String
+  totalNF Double
+	
+}
+
+entity CircuitoComplemento {
+     createdAt LocalDate
+   updatedAt LocalDate 
+}
+
+entity Contrato {
+   createdAt LocalDate
+   updatedAt LocalDate 
+   dataAssinatura LocalDate
+   dataReajuste LocalDate  
+   dataTermino LocalDate
+   gerenteComercial String
+   gerenteProduto String
+   nome String
+   numeroContratoSap String
+   numeroContratoTpz String
+   status String
+   tipo String 
+   vigencia Integer 
+   idClienteFaturamento Integer
+   
+
+  
+}
+
+entity Circuito {
+	createdAt LocalDate
+    updatedAt LocalDate
+    ativo Boolean
+    dataAtivacao LocalDate
+    dataTermino LocalDate
+    designacaoCliente String
+    designacaoTpz String
+    latitude Float
+    longitude Float
+    vigencia String
+
+}
+
+entity CircuitoHub {
+	createdAt LocalDate
+    updatedAt LocalDate
+    
+
+}
+
+entity Arquivos {
+  public Boolean
+  perfil Perfil
+  tipo TipoArquivo
+  titulo String
+  link String
+  descricao String
+  dataCriacao LocalDate
+  ativo Boolean
+  nome String
+  md5 String
+  contentType String
+  
+}
+
+relationship OneToOne {
+  Circuito{circuito} to CircuitoHub
+}
+
+relationship ManyToOne {
+  Contrato{notaFiscal} to NotaFiscal
+  Contrato{circuito} to Circuito
+  Cliente{cliente} to Cliente
+  Cliente{contrato} to Contrato
+  Usuario{cliente} to Cliente
+  FaqCategoria{faq} to Faq
+  Faq{faq} to FaqResposta
+}
+
+	
