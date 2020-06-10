@@ -13,7 +13,7 @@ entity Dispositivo {
 }
 
 relationship ManyToOne {
-  Projeto{projeto} to Empresa
+  Projeto{empresa} to Empresa
   Dispositivo {projeto} to Projeto
 
 }
