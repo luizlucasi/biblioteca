@@ -1,0 +1,22 @@
+
+
+entity Empresa {
+    nome String
+}
+
+entity Projeto {
+	nome String
+}
+
+entity Dispositivo {
+	nome String
+}
+
+relationship ManyToOne {
+  Projeto{projeto} to Empresa
+  Dispositivo {projeto} to Projeto
+
+}
+
+
+	

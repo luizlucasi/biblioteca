@@ -1,0 +1,29 @@
+{
+  "name": "Dispositivo",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "projeto",
+      "otherEntityRelationshipName": "dispositivo",
+      "relationshipName": "projeto",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200610170607",
+  "entityTableName": "dispositivo",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
