@@ -1,0 +1,29 @@
+{
+  "name": "Projeto",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "empresa",
+      "otherEntityRelationshipName": "projeto",
+      "relationshipName": "projeto",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200610170507",
+  "entityTableName": "projeto",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
