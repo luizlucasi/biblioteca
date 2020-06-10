@@ -28,7 +28,7 @@ public class Projeto implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "projetos", allowSetters = true)
-    private Empresa projeto;
+    private Empresa empresa;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -52,17 +52,17 @@ public class Projeto implements Serializable {
         this.nome = nome;
     }
 
-    public Empresa getProjeto() {
-        return projeto;
+    public Empresa getEmpresa() {
+        return empresa;
     }
 
-    public Projeto projeto(Empresa empresa) {
-        this.projeto = empresa;
+    public Projeto empresa(Empresa empresa) {
+        this.empresa = empresa;
         return this;
     }
 
-    public void setProjeto(Empresa empresa) {
-        this.projeto = empresa;
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

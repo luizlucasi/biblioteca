@@ -12,10 +12,10 @@
                 <dd>
                     <span>{{ projeto.nome }}</span>
                 </dd>
-                <dt><span jhiTranslate="libraryApp.projeto.projeto">Projeto</span></dt>
+                <dt><span jhiTranslate="libraryApp.projeto.empresa">Empresa</span></dt>
                 <dd>
-                    <div *ngIf="projeto.projeto">
-                        <a [routerLink]="['/empresa', projeto.projeto?.id, 'view']">{{ projeto.projeto?.id }}</a>
+                    <div *ngIf="projeto.empresa">
+                        <a [routerLink]="['/empresa', projeto.empresa?.id, 'view']">{{ projeto.empresa?.id }}</a>
                     </div>
                 </dd>
             </dl>

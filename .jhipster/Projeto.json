@@ -11,7 +11,7 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "empresa",
       "otherEntityRelationshipName": "projeto",
-      "relationshipName": "projeto",
+      "relationshipName": "empresa",
       "otherEntityField": "id"
     }
   ],

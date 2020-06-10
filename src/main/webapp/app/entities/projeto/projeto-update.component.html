@@ -18,10 +18,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="libraryApp.projeto.projeto" for="field_projeto">Projeto</label>
-                    <select class="form-control" id="field_projeto" name="projeto" formControlName="projeto">
+                    <label class="form-control-label" jhiTranslate="libraryApp.projeto.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" formControlName="empresa">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="empresaOption.id === editForm.get('projeto')!.value?.id ? editForm.get('projeto')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{ empresaOption.id }}</option>
+                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{ empresaOption.id }}</option>
                     </select>
                 </div>
             </div>
