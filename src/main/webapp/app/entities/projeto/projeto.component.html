@@ -24,7 +24,7 @@
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="libraryApp.projeto.nome">Nome</span></th>
-                    <th scope="col" ><span jhiTranslate="libraryApp.projeto.projeto">Projeto</span></th>
+                    <th scope="col" ><span jhiTranslate="libraryApp.projeto.empresa">Empresa</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -33,8 +33,8 @@
                     <td><a [routerLink]="['/projeto', projeto.id, 'view']">{{ projeto.id }}</a></td>
                     <td>{{ projeto.nome }}</td>
                     <td>
-                        <div *ngIf="projeto.projeto">
-                            <a [routerLink]="['/empresa', projeto.projeto?.id, 'view']" >{{ projeto.projeto?.id }}</a>
+                        <div *ngIf="projeto.empresa">
+                            <a [routerLink]="['/empresa', projeto.empresa?.id, 'view']" >{{ projeto.empresa?.id }}</a>
                         </div>
                     </td>
                     <td class="text-right">
